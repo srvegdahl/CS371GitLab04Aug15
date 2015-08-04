@@ -24,6 +24,7 @@ import java.util.ArrayList;
 public class TextModActivity extends ActionBarActivity {
 
     EditText editText;
+
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
 
@@ -83,6 +84,10 @@ public class TextModActivity extends ActionBarActivity {
         String text = editText.getText().toString();
         text = text.toUpperCase();
         editText.setText(text);
+    }
+
+    public void clearButtonPressed(View v) {
+        editText.setText("");
     }
 
     /**
