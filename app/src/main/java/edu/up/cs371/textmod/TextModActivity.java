@@ -16,11 +16,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
+
+    EditText editText;
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -37,6 +40,8 @@ public class TextModActivity extends ActionBarActivity {
         // perform superclass initialization; load the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_mod);
+
+        editText = (EditText)findViewById(R.id.editText);
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
@@ -73,6 +78,10 @@ public class TextModActivity extends ActionBarActivity {
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
 
+    }
+
+    public void clearButtonPressed(View v) {
+        editText.setText("");
     }
 
     /**
